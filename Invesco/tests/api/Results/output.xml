@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190423 16:27:28.834" rpa="false">
+<suite id="s1" name="Api" source="E:\Seshu\Work\WavelabsRobo\Invesco\tests\api">
+<suite id="s1-s1" name="TC Rest 001" source="E:\Seshu\Work\WavelabsRobo\Invesco\tests\api\TC_Rest_001.robot">
+<test id="s1-s1-t1" name="GET an existing user, notice how the schema gets more accurate">
+<kw name="Get from the URI" library="WavelabsAPIKeywords">
+<arguments>
+<arg>/users/1</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Initializing Get Request ...</arg>
+</arguments>
+<msg timestamp="20190423 16:27:29.193" level="INFO">Initializing Get Request ...</msg>
+<status status="PASS" starttime="20190423 16:27:29.193" endtime="20190423 16:27:29.193"></status>
+</kw>
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>${uri}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:29.194" endtime="20190423 16:27:29.920"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:27:29.193" endtime="20190423 16:27:29.920"></status>
+</kw>
+<kw name="Output Schema" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON Schema to terminal or a file.*</doc>
+<arguments>
+<arg>response body</arg>
+</arguments>
+<msg timestamp="20190423 16:27:29.920" level="INFO">
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "default": 1
+        },
+        "name": {
+            "type": "string",
+            "default": "Leanne Graham"
+        },
+        "username": {
+            "type": "string",
+            "default": "Bret"
+        },
+        "email": {
+            "type": "string",
+            "default": "Sincere@april.biz"
+        },
+        "address": {
+            "type": "object",
+            "properties": {
+                "street": {
+                    "type": "string",
+                    "default": "Kulas Light"
+                },
+                "suite": {
+                    "type": "string",
+                    "default": "Apt. 556"
+                },
+                "city": {
+                    "type": "string",
+                    "default": "Gwenborough"
+                },
+                "zipcode": {
+                    "type": "string",
+                    "default": "92998-3874"
+                },
+                "geo": {
+                    "type": "object",
+                    "properties": {
+                        "lat": {
+                            "type": "string",
+                            "default": "-37.3159"
+                        },
+                        "lng": {
+                            "type": "string",
+                            "default": "81.1496"
+                        }
+                    },
+                    "required": [
+                        "lat",
+                        "lng"
+                    ]
+                }
+            },
+            "required": [
+                "city",
+                "geo",
+                "street",
+                "suite",
+                "zipcode"
+            ]
+        },
+        "phone": {
+            "type": "string",
+            "default": "1-770-736-8031 x56442"
+        },
+        "website": {
+            "type": "string",
+            "default": "hildegard.org"
+        },
+        "company": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "default": "Romaguera-Crona"
+                },
+                "catchPhrase": {
+                    "type": "string",
+                    "default": "Multi-layered client-server neural-net"
+                },
+                "bs": {
+                    "type": "string",
+                    "default": "harness real-time e-markets"
+                }
+            },
+            "required": [
+                "bs",
+                "catchPhrase",
+                "name"
+            ]
+        }
+    },
+    "required": [
+        "address",
+        "company",
+        "email",
+        "id",
+        "name",
+        "phone",
+        "username",
+        "website"
+    ]
+}</msg>
+<status status="PASS" starttime="20190423 16:27:29.920" endtime="20190423 16:27:29.934"></status>
+</kw>
+<kw name="Object" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON object.*</doc>
+<arguments>
+<arg>response body</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:29.934" endtime="20190423 16:27:29.936"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response body id</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:29.936" endtime="20190423 16:27:29.937"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>response body name</arg>
+<arg>Leanne Graham</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:29.937" endtime="20190423 16:27:29.937"></status>
+</kw>
+<kw name="Output Schema" library="REST" type="teardown">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON Schema to terminal or a file.*</doc>
+<msg timestamp="20190423 16:27:29.938" level="INFO">
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "GET https://jsonplaceholder.typicode.com/users/1",
+    "description": "Api.TC Rest 001: GET an existing user, notice how the schema gets more accurate",
+    "default": true,
+    "examples": [],
+    "type": "object",
+    "properties": {
+        "request": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "null"
+                },
+                "query": {
+                    "type": "object"
+                }
+            }
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "default": 1,
+                            "enum": [
+                                1
+                            ]
+                        },
+                        "name": {
+                            "type": "string",
+                            "default": "Leanne Graham",
+                            "enum": [
+                                "Leanne Graham"
+                            ]
+                        },
+                        "username": {
+                            "type": "string",
+                            "default": "Bret"
+                        },
+                        "email": {
+                            "type": "string",
+                            "default": "Sincere@april.biz"
+                        },
+                        "address": {
+                            "type": "object",
+                            "properties": {
+                                "street": {
+                                    "type": "string",
+                                    "default": "Kulas Light"
+                                },
+                                "suite": {
+                                    "type": "string",
+                                    "default": "Apt. 556"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "default": "Gwenborough"
+                                },
+                                "zipcode": {
+                                    "type": "string",
+                                    "default": "92998-3874"
+                                },
+                                "geo": {
+                                    "type": "object",
+                                    "properties": {
+                                        "lat": {
+                                            "type": "string",
+                                            "default": "-37.3159"
+                                        },
+                                        "lng": {
+                                            "type": "string",
+                                            "default": "81.1496"
+                                        }
+                                    },
+                                    "required": [
+                                        "lat",
+                                        "lng"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "city",
+                                "geo",
+                                "street",
+                                "suite",
+                                "zipcode"
+                            ]
+                        },
+                        "phone": {
+                            "type": "string",
+                            "default": "1-770-736-8031 x56442"
+                        },
+                        "website": {
+                            "type": "string",
+                            "default": "hildegard.org"
+                        },
+                        "company": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "default": "Romaguera-Crona"
+                                },
+                                "catchPhrase": {
+                                    "type": "string",
+                                    "default": "Multi-layered client-server neural-net"
+                                },
+                                "bs": {
+                                    "type": "string",
+                                    "default": "harness real-time e-markets"
+                                }
+                            },
+                            "required": [
+                                "bs",
+                                "catchPhrase",
+                                "name"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "address",
+                        "company",
+                        "email",
+                        "id",
+                        "name",
+                        "phone",
+                        "username",
+                        "website"
+                    ],
+                    "examples": [
+                        {
+                            "id": 1,
+                            "name": "Leanne Graham",
+                            "username": "Bret",
+                            "email": "Sincere@april.biz",
+                            "address": {
+                                "street": "Kulas Light",
+                                "suite": "Apt. 556",
+                                "city": "Gwenborough",
+                                "zipcode": "92998-3874",
+                                "geo": {
+                                    "lat": "-37.3159",
+                                    "lng": "81.1496"
+                                }
+                            },
+                            "phone": "1-770-736-8031 x56442",
+                            "website": "hildegard.org",
+                            "company": {
+                                "name": "Romaguera-Crona",
+                                "catchPhrase": "Multi-layered client-server neural-net",
+                                "bs": "harness real-time e-markets"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}</msg>
+<status status="PASS" starttime="20190423 16:27:29.937" endtime="20190423 16:27:29.947"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:27:29.192" endtime="20190423 16:27:29.947" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="GET existing users, use JSONPath for very short but powerful queries">
+<kw name="Get from the URI" library="WavelabsAPIKeywords">
+<arguments>
+<arg>/users?_limit=5</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Initializing Get Request ...</arg>
+</arguments>
+<msg timestamp="20190423 16:27:29.949" level="INFO">Initializing Get Request ...</msg>
+<status status="PASS" starttime="20190423 16:27:29.949" endtime="20190423 16:27:29.949"></status>
+</kw>
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>${uri}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:29.949" endtime="20190423 16:27:30.504"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:27:29.948" endtime="20190423 16:27:30.505"></status>
+</kw>
+<kw name="Array" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON array.*</doc>
+<arguments>
+<arg>response body</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:30.505" endtime="20190423 16:27:30.511"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>$[0].id</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:30.511" endtime="20190423 16:27:30.551"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$[0]..lat</arg>
+<arg>-37.3159</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:30.552" endtime="20190423 16:27:30.581"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>$..id</arg>
+<arg>maximum=5</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:30.581" endtime="20190423 16:27:30.613"></status>
+</kw>
+<kw name="Output" library="REST" type="teardown">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>$[*].email</arg>
+</arguments>
+<msg timestamp="20190423 16:27:30.642" level="INFO">
+[
+    "Sincere@april.biz",
+    "Shanna@melissa.tv",
+    "Nathan@yesenia.net",
+    "Julianne.OConner@kory.org",
+    "Lucio_Hettinger@annie.ca"
+]</msg>
+<status status="PASS" starttime="20190423 16:27:30.613" endtime="20190423 16:27:30.642"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:27:29.948" endtime="20190423 16:27:30.643" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="POST with valid params to create a new user, can be output to a file">
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>/users</arg>
+<arg>${json}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:30.643" endtime="20190423 16:27:31.379"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>201</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:31.379" endtime="20190423 16:27:31.379"></status>
+</kw>
+<kw name="Output" library="REST" type="teardown">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response body</arg>
+<arg>${OUTPUTDIR}/new_user.demo.json</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:31.380" endtime="20190423 16:27:31.380"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:27:30.643" endtime="20190423 16:27:31.381" critical="yes"></status>
+</test>
+<test id="s1-s1-t4" name="PUT with valid params to update the existing user, values matter here">
+<kw name="Put" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a PUT request to the endpoint.*</doc>
+<arguments>
+<arg>/users/2</arg>
+<arg>{ "isCoding": true }</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:31.382" endtime="20190423 16:27:32.591"></status>
+</kw>
+<kw name="Boolean" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON boolean.*</doc>
+<arguments>
+<arg>response body isCoding</arg>
+<arg>true</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:32.591" endtime="20190423 16:27:32.592"></status>
+</kw>
+<kw name="Put" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a PUT request to the endpoint.*</doc>
+<arguments>
+<arg>/users/2</arg>
+<arg>{ "sleep": null }</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:32.592" endtime="20190423 16:27:33.557"></status>
+</kw>
+<kw name="Null" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON null.*</doc>
+<arguments>
+<arg>response body sleep</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:33.558" endtime="20190423 16:27:33.561"></status>
+</kw>
+<kw name="Put" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a PUT request to the endpoint.*</doc>
+<arguments>
+<arg>/users/2</arg>
+<arg>{ "pockets": "", "money": 0.02 }</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:33.561" endtime="20190423 16:27:34.333"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>response body pockets</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:34.334" endtime="20190423 16:27:34.336"></status>
+</kw>
+<kw name="Number" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON number.*</doc>
+<arguments>
+<arg>response body money</arg>
+<arg>0.02</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:34.337" endtime="20190423 16:27:34.338"></status>
+</kw>
+<kw name="Missing" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field does not exist.*</doc>
+<arguments>
+<arg>response body moving</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:34.339" endtime="20190423 16:27:34.339"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:27:31.381" endtime="20190423 16:27:34.339" critical="yes"></status>
+</test>
+<test id="s1-s1-t5" name="PATCH with valid params, reusing response properties as a new payload">
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>/users/3</arg>
+</arguments>
+<assign>
+<var>&amp;{res}</var>
+</assign>
+<msg timestamp="20190423 16:27:34.878" level="INFO">&amp;{res} = { seconds=0.523458 | status=200 | body={'id': 3, 'name': 'Clementine Bauch', 'username': 'Samantha', 'email': 'Nathan@yesenia.net', 'address': {'street': 'Douglas Extension', 'suite': 'Suite 847', 'ci...</msg>
+<status status="PASS" starttime="20190423 16:27:34.341" endtime="20190423 16:27:34.878"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$.name</arg>
+<arg>Clementine Bauch</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:34.878" endtime="20190423 16:27:34.918"></status>
+</kw>
+<kw name="Patch" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a PATCH request to the endpoint.*</doc>
+<arguments>
+<arg>/users/4</arg>
+<arg>{ "name": "${res.body['name']}" }</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:34.918" endtime="20190423 16:27:35.861"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$.name</arg>
+<arg>Clementine Bauch</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:35.861" endtime="20190423 16:27:35.901"></status>
+</kw>
+<kw name="Patch" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a PATCH request to the endpoint.*</doc>
+<arguments>
+<arg>/users/5</arg>
+<arg>${dict}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:35.901" endtime="20190423 16:27:36.907"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$.name</arg>
+<arg>${dict.name}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:36.907" endtime="20190423 16:27:36.938"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:27:34.340" endtime="20190423 16:27:36.938" critical="yes"></status>
+</test>
+<test id="s1-s1-t6" name="DELETE the existing successfully, save the history of all requests">
+<kw name="Delete" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a DELETE request to the endpoint.*</doc>
+<arguments>
+<arg>/users/6</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:36.938" endtime="20190423 16:27:37.579"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>200</arg>
+<arg>202</arg>
+<arg>204</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:37.579" endtime="20190423 16:27:37.580"></status>
+</kw>
+<kw name="Rest Instances" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Writes the instances as JSON to a file.*</doc>
+<arguments>
+<arg>${OUTPUTDIR}/all.demo.json</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:37.581" endtime="20190423 16:27:37.586"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:27:36.938" endtime="20190423 16:27:37.586" critical="yes"></status>
+</test>
+<doc>Test data can be read from variables and files.
+Both JSON and Python type systems are supported for inputs.
+Every request creates a so-called instance. Can be `Output`.
+Most keywords are effective only for the last instance.
+Initial schemas are autogenerated for request and response.
+You can make them more detailed by using assertion keywords.
+The assertion keywords correspond to the JSON types.
+They take in either path to the property or a JSONPath query.
+Using (enum) values in tests optional. Only type is required.
+All the JSON Schema validation keywords are also supported.
+Thus, there is no need to write any own validation logic.
+Not a long path from schemas to full Swagger/OpenAPI specs.
+The persistence of the created instances is the test suite.
+Use keyword `Rest instances` to output the created instances.</doc>
+<status status="PASS" starttime="20190423 16:27:28.861" endtime="20190423 16:27:37.587"></status>
+</suite>
+<suite id="s1-s2" name="TC Rest 002" source="E:\Seshu\Work\WavelabsRobo\Invesco\tests\api\TC_Rest_002.robot">
+<test id="s1-s2-t1" name="Test first sample">
+<kw name="Set Headers" library="REST">
+<tags>
+<tag>settings</tag>
+</tags>
+<doc>*Sets new request headers or updates the existing.*</doc>
+<arguments>
+<arg>{"X-RapidAPI-Host": "community-manga-eden.p.rapidapi.com"}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:37.597" endtime="20190423 16:27:37.598"></status>
+</kw>
+<kw name="Set Headers" library="REST">
+<tags>
+<tag>settings</tag>
+</tags>
+<doc>*Sets new request headers or updates the existing.*</doc>
+<arguments>
+<arg>{"X-RapidAPI-Key": "f3035f69a2msh7bc2ca1e67c133ep115d25jsn8079ee82eced"}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:37.598" endtime="20190423 16:27:37.598"></status>
+</kw>
+<kw name="Get from the URI" library="WavelabsAPIKeywords">
+<arguments>
+<arg>/list/0</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Initializing Get Request ...</arg>
+</arguments>
+<msg timestamp="20190423 16:27:37.599" level="INFO">Initializing Get Request ...</msg>
+<status status="PASS" starttime="20190423 16:27:37.598" endtime="20190423 16:27:37.599"></status>
+</kw>
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>${uri}</arg>
+</arguments>
+<msg timestamp="20190423 16:27:39.818" level="FAIL">KeyError: 'content-type'</msg>
+<status status="FAIL" starttime="20190423 16:27:37.599" endtime="20190423 16:27:39.818"></status>
+</kw>
+<status status="FAIL" starttime="20190423 16:27:37.598" endtime="20190423 16:27:39.818"></status>
+</kw>
+<kw name="Output" library="REST" type="teardown">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response body</arg>
+<arg>${OUTPUTDIR}/auth_demo.json</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:27:39.819" endtime="20190423 16:27:39.820"></status>
+</kw>
+<status status="FAIL" starttime="20190423 16:27:37.597" endtime="20190423 16:27:39.820" critical="yes">KeyError: 'content-type'</status>
+</test>
+<doc>Test case to demonestrate the authentication key request</doc>
+<status status="FAIL" starttime="20190423 16:27:37.589" endtime="20190423 16:27:39.821"></status>
+</suite>
+<status status="FAIL" starttime="20190423 16:27:28.836" endtime="20190423 16:27:39.823"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="1">Critical Tests</stat>
+<stat pass="6" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="1" id="s1" name="Api">Api</stat>
+<stat pass="6" fail="0" id="s1-s1" name="TC Rest 001">Api.TC Rest 001</stat>
+<stat pass="0" fail="1" id="s1-s2" name="TC Rest 002">Api.TC Rest 002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190423 16:32:45.989" rpa="false">
+<suite id="s1" name="TC SELENIUM 001" source="E:\Seshu\Work\WavelabsRobo\Invesco\tests\selenium\TC_SELENIUM_001.robot">
+<test id="s1-t1" name="Google Search">
+<kw name="Test Initialize" library="WavelabsKeywords">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Initializing Test Suite...</arg>
+</arguments>
+<msg timestamp="20190423 16:32:47.103" level="INFO">Initializing Test Suite...</msg>
+<status status="PASS" starttime="20190423 16:32:47.103" endtime="20190423 16:32:47.104"></status>
+</kw>
+<kw name="Start Browser" library="WavelabsPage">
+<arguments>
+<arg>${UI.BROWSER}</arg>
+</arguments>
+<msg timestamp="20190423 16:32:49.605" level="INFO">Start Browser
+init Wavelabs driver
+driver
+_init_driver
+main direcotry: E:\Seshu\Work\WavelabsRobo\common\drivers\chromedriver</msg>
+<status status="PASS" starttime="20190423 16:32:47.104" endtime="20190423 16:32:49.605"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Suite Initialization Complete</arg>
+</arguments>
+<msg timestamp="20190423 16:32:49.606" level="INFO">Test Suite Initialization Complete</msg>
+<status status="PASS" starttime="20190423 16:32:49.605" endtime="20190423 16:32:49.606"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:32:47.103" endtime="20190423 16:32:49.606"></status>
+</kw>
+<kw name="Open Browser To Start Page" library="WavelabsKeywords">
+<arguments>
+<arg>${APP URL}</arg>
+</arguments>
+<kw name="Navigate To Page" library="WavelabsPage">
+<doc>navigates to the launch page, performs logout if within VE</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:32:49.607" endtime="20190423 16:32:51.183"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:32:49.606" endtime="20190423 16:32:51.184"></status>
+</kw>
+<kw name="Input Text" library="WavelabsPage">
+<doc>Keyword/definition is useful to type the given text in the given element
+:param locator_type: type of the element locator
+:param locator: element locator
+:param text: the text to type in the mentioned element
+:param element_name: name of the input element
+:return:</doc>
+<arguments>
+<arg>${LOCATOR NAME}</arg>
+<arg>${SEARCH TEXTBOX NAME}</arg>
+<arg>Automation Testing</arg>
+<arg>${SEARCH TEXTBOX NAME}</arg>
+</arguments>
+<msg timestamp="20190423 16:32:51.351" level="INFO" html="yes">Entered  input for q as: Automation Testing</msg>
+<status status="PASS" starttime="20190423 16:32:51.184" endtime="20190423 16:32:51.351"></status>
+</kw>
+<kw name="Press Escape" library="WavelabsPage">
+<arguments>
+<arg>${LOCATOR NAME}</arg>
+<arg>${SEARCH TEXTBOX NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:32:51.351" endtime="20190423 16:32:51.379"></status>
+</kw>
+<kw name="Click Element" library="WavelabsPage">
+<doc>clicks the element identified by given element locator tuple</doc>
+<arguments>
+<arg>${LOCATOR NAME}</arg>
+<arg>${SEARCH BUTTON NAME}</arg>
+<arg>${SEARCH BUTTON NAME}</arg>
+</arguments>
+<msg timestamp="20190423 16:32:54.256" level="INFO" html="yes">btnK clicked successfully</msg>
+<status status="PASS" starttime="20190423 16:32:51.379" endtime="20190423 16:32:54.269"></status>
+</kw>
+<kw name="Title Should Be" library="WavelabsPage">
+<arguments>
+<arg>Automation Testing - Google Search</arg>
+</arguments>
+<status status="PASS" starttime="20190423 16:32:54.270" endtime="20190423 16:32:54.274"></status>
+</kw>
+<kw name="Test Teardown" library="WavelabsKeywords">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Tearing Down Test Suite...</arg>
+</arguments>
+<msg timestamp="20190423 16:32:54.275" level="INFO">Tearing Down Test Suite...</msg>
+<status status="PASS" starttime="20190423 16:32:54.275" endtime="20190423 16:32:54.275"></status>
+</kw>
+<kw name="Close Browser" library="WavelabsPage">
+<doc>Close the WebDriver and associated Browser; should be called at the end of every test run</doc>
+<msg timestamp="20190423 16:32:56.587" level="INFO">Close Browser
+init Wavelabs driver
+inner close Browser</msg>
+<status status="PASS" starttime="20190423 16:32:54.275" endtime="20190423 16:32:56.587"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Suite Teardown Complete</arg>
+</arguments>
+<msg timestamp="20190423 16:32:56.588" level="INFO">Test Suite Teardown Complete</msg>
+<status status="PASS" starttime="20190423 16:32:56.588" endtime="20190423 16:32:56.588"></status>
+</kw>
+<status status="PASS" starttime="20190423 16:32:54.274" endtime="20190423 16:32:56.588"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status status="PASS" starttime="20190423 16:32:47.103" endtime="20190423 16:32:56.588" critical="yes"></status>
+</test>
+<doc>This suite is for demonstrating the Robot Framework with Selenium Webdriver and Python langauge</doc>
+<status status="PASS" starttime="20190423 16:32:45.991" endtime="20190423 16:32:56.588"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">DEBUG</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="TC SELENIUM 001">TC SELENIUM 001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
