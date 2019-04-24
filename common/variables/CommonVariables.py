@@ -1,0 +1,8 @@
+LOCATOR_NAME = "name"
+LOCATOR_ID = "id"
+LOCATOR_TAG = "tag name"
+LOCATOR_XPATH = "xpath"
+LOCATOR_LINK_TEXT = "link text"
+LOCATOR_PARTIAL_LINK_TEXT = "partial link text"
+LOCATOR_CLASS_NAME = "class name"
+LOCATOR_CSS_SELECTOR = "css selector"
