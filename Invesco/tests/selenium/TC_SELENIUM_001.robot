@@ -3,9 +3,9 @@ Documentation       This suite is for demonstrating the Robot Framework with Sel
 
 Library             ../../../common/pages/WavelabsPage.py
 Resource            ../../../common/keywords/wavelabsPageKeywords/WavelabsKeywords.robot
+Variables           ../../../common/variables/CommonVariables.py
 Variables           ../../variables/InvescoVariables.py
 Variables           ../../pages/LoginPageLocators.py
-Variables           ../../../common/variables/CommonVariables.py
 
 
 *** Test Cases ***
